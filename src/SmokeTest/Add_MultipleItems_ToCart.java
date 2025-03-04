@@ -15,7 +15,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-//Haseena
+
 public class Add_MultipleItems_ToCart {
 
 	public static void main(String[] args) throws Exception {

@@ -24,7 +24,7 @@ try {
 	driver.navigate().back();
 	driver.navigate().forward();
 	driver.quit();
-	
+	driver.close();
 long endTime=System.currentTimeMillis();
 long  elapsedTime=endTime-startTime;
 System.out.println("Elapse time:"+elapsedTime+"milliseconds");

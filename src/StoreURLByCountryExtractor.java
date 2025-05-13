@@ -1,4 +1,4 @@
-package AandF;
+
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -27,7 +27,6 @@ public class StoreURLByCountryExtractor {
 
 	    		XSSFWorkbook workbook=new XSSFWorkbook();
 	    		XSSFSheet sheet=workbook.createSheet("Store URLs");
-
 
 	    		sheet.createRow(0);
 	    		sheet.getRow(0).createCell(0).setCellValue("Country");

@@ -1,8 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 
 public class TaxValidation {
 
@@ -10,7 +8,7 @@ public class TaxValidation {
 		
 		WebDriver driver=new ChromeDriver();
 
-		driver.get("https://practice.automationtesting.in/shop/");
+		driver.get("https://practice.automationtesting.in/");
 
 		driver.manage().window().maximize();
 
@@ -78,8 +76,6 @@ public class TaxValidation {
 
 		}
 		
-		driver.quit();
-
 	}
 
 }

@@ -7,51 +7,43 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
+
 public class pageSpeed {
 
-	public static void main(String[] args) throws Exception {
-		WebDriver driver=new ChromeDriver();
+	
 
-		driver.manage().window().maximize();
-
-		driver.get("https://pagespeed.web.dev/");
-
-		WebElement urlField = driver.findElement(By.xpath("//input[@type='text']"));
-
-		urlField.clear();
-
-		urlField.sendKeys("https://www.flipkart.com/"); 
-
-		WebElement Button = driver.findElement(By.xpath("(//span[@class=\"VfPpkd-vQzf8d\"])[5]"));
-
-		Button.click();
-
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(90));
-
-		WebElement performanceScoreElement=wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".lh-exp-gauge__percentage")));
-
-		String performanceScore=performanceScoreElement.getText();
-
-		System.out.println("The performance score of mobile: " + performanceScore);
-
-		Thread.sleep(10000);
-
-		driver.findElement(By.cssSelector("#desktop_tab")).click();
-
-		WebElement ScoreElement=driver.findElement(By.xpath("(//a[@class=\"lh-gauge__wrapper lh-gauge__wrapper--average\"])[1]"));
-
-		String Score= ScoreElement.getText();
-
-		Thread.sleep(7000);
-
-		System.out.println("The performance score of Desktop:" + Score);
-
-		driver.quit();	     
+		public static void main(String[] args) throws InterruptedException {
+			// TODO Auto-generated method stub
+			WebDriver driver=new ChromeDriver();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+			System.setProperty("webdriver.chromedriver", "C:\\Users\\RISHITHA\\Downloads\\chromedriver-win64");
+			driver.manage().window().maximize();
+			driver.get("https://pagespeed.web.dev");
+			WebElement page=driver.findElement(By.xpath("//input[@placeholder='Enter a web page URL\']"));
+			page.clear();
+			page.sendKeys("https://www.amazon.in/");
+			driver.findElement(By.xpath("(//span[@class='VfPpkd-vQzf8d'])[5]")).click();
+			Thread.sleep(50000);
+			//driver.quit();
+			WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(90));
+			//WebElement score= wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("(//div[@class='lh-exp-gauge__svg-wrapper'])[1]")));
+			WebElement score=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='lh-exp-gauge__svg-wrapper'])[1]")));
+			String scor=score.getText();
+			System.out.println(" performance score for mobile device:" +scor);
+			Thread.sleep(10000);
+			
+			driver.findElement(By.xpath("(//span[@class='VfPpkd-YVzG2b'])[2]")).click();
+			WebElement scores=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class=\"lh-exp-gauge__svg-wrapper\"])[2]")));
+			String score1=scores.getText();
+			System.out.println(" performance score for desktop device:" +score1);
+			
 		
+			//System.out.println(driver.findElement(By.cssSelector("(//div[@class='lh-exp-gauge__svg-wrapper'])[1]")));
+
+			
+
+		}
 		
-		
+
 	}
-
-}
-
-

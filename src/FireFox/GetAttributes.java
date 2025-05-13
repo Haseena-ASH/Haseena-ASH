@@ -10,7 +10,7 @@ public class GetAttributes {
 
 	public static void main(String[] args) {
 		
-			WebDriver driver = new EdgeDriver();
+			WebDriver driver = new FirefoxDriver();
 			driver.get("http://www.google.com");
 			WebElement searchButton = driver.findElement(By.name("btnK"));
 			System.out.println("Name of the button is: "+searchButton.getAttribute("name"));
@@ -22,7 +22,8 @@ public class GetAttributes {
 			searchButton.sendKeys("Packt Publishing");
 			
 			
-			driver.close();			}
+		//	driver.close();	
+			}
 		
 
 }

@@ -33,7 +33,7 @@ public class Purecode {
 		ash.findElement(By.xpath("//li[@class=\"header-account\"]")).click();
 		ash.findElement(By.xpath("//div[@class=\"account-create-account\"]")).click();
 		ash.findElement(By.xpath("//input[@name=\"customer[first_name]\"]")).sendKeys("haseena");
-		ash.findElement(By.xpath("//input[@name=\"customer[last_name]\"]")).sendKeys("MD");
+		ash.findElement(By.xpath("//input[@name='customer[last_namee]']")).sendKeys("MD");
 		ash.findElement(By.xpath("//input[@name='customer[email]']")).sendKeys("Ash@gmail.com");
 		ash.findElement(By.xpath("//input[@name='customer[password]']")).sendKeys("267842");
 		ash.findElement(By.xpath("//button[@class=\"button hover-animation leader\"]")).click();
